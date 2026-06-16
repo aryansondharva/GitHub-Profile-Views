@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "rewrites": [
+    { "source": "/ghpvc", "destination": "/api/index" },
+    { "source": "/", "destination": "/api/index" }
+  ]
+}

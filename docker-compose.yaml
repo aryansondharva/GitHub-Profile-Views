@@ -8,9 +8,9 @@ services:
     restart: unless-stopped
     working_dir: /app
     ports:
-      - "${PORT:-3000}:3000"
+      - "${PORT:-3000}:${PORT:-3000}"
     environment:
-      PORT: 3000
+      PORT: ${PORT:-3000}
       REPOSITORY: ${REPOSITORY:-file}
       FILE_STORAGE_PATH: ${FILE_STORAGE_PATH:-}
       DB_HOST: ${DB_HOST:-postgres}

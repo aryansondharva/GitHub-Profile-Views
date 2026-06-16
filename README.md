@@ -158,19 +158,19 @@ Install dependencies and start the service:
 ```bash
 npm install
 cp .env.example .env
-npm start
+npm run dev
 ```
 
 The app runs at:
 
 ```text
-http://localhost:3000
+http://localhost:3002
 ```
 
 Local badge example:
 
 ```text
-http://localhost:3000/ghpvc/?username=aryansondharva&color=green&style=flat-square
+http://localhost:3002/ghpvc/?username=aryansondharva&color=green&style=flat-square
 ```
 
 Run tests:
@@ -186,7 +186,7 @@ The service reads configuration from `.env`.
 | variable | default | description |
 | -------- | ------- | ----------- |
 | `PROJECT_NAME` | `ghpvc` | Docker container name prefix |
-| `PORT` | `3000` | HTTP server port |
+| `PORT` | `3002` | HTTP server port |
 | `REPOSITORY` | `file` | Storage driver: `file`, `pdo`, or `postgres` |
 | `FILE_STORAGE_PATH` | `storage/` | Path for file-based counter storage |
 | `DB_HOST` | `localhost` | PostgreSQL host |
@@ -232,7 +232,7 @@ docker-compose up --build
 The container exposes the service at:
 
 ```text
-http://localhost:3000
+http://localhost:3002
 ```
 
 ## FAQ
