@@ -70,6 +70,7 @@ export function createRequestHandler({ appBasePath }) {
         )
       );
     } catch (error) {
+      console.error('Request error:', error);
       response.end(
         badgeImageRenderer.renderBadgeWithError(
           badgeLabel,

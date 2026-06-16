@@ -18,6 +18,19 @@ export class CounterPdoRepository {
   }
 
   async addViewByUsername(username) {
+    const result = await this.pool.query(
+      `SELECT EXISTS (
+        SELECT 1 FROM ${this.tableName}
+        WHERE username = $1
+        AND created_at > NOW() - INTERVAL '10 seconds'
+      ) AS has_cooldown`,
+      [username.toString()]
+    );
+
+    if (result.rows[0]?.has_cooldown) {
+      return;
+    }
+
     await this.pool.query(
       `INSERT INTO ${this.tableName} (username, created_at) VALUES ($1, NOW())`,
       [username.toString()]

@@ -37,7 +37,23 @@ export class CounterFileRepository {
   }
 
   async addViewByUsername(username) {
-    appendFileSync(this.getViewsFilePath(username), `${new Date().toISOString()}\n`);
+    const viewsFilePath = this.getViewsFilePath(username);
+
+    if (existsSync(viewsFilePath)) {
+      const content = readFileSync(viewsFilePath, 'utf8').trim().split('\n');
+      if (content.length > 0) {
+        const lastLine = content[content.length - 1];
+        if (lastLine) {
+          const lastView = new Date(lastLine);
+          const now = new Date();
+          if (now - lastView < 10000) { // 10 seconds cooldown
+            return;
+          }
+        }
+      }
+    }
+
+    appendFileSync(viewsFilePath, `${new Date().toISOString()}\n`);
 
     try {
       this.incrementViewsCount(username);
