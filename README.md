@@ -15,7 +15,7 @@ The counter increments when GitHub loads the badge through GitHub Camo, then dis
 Use the hosted service or deploy it on your own domain, then add the badge URL to your GitHub profile README.
 
 ```markdown
-![](https://aryan-sondharva.vercel.app/ghpvc/?username=your-github-username)
+![](https://git-hub-profile-views.vercel.app/ghpvc/?username=your-github-username)
 ```
 
 > [!NOTE]
@@ -39,13 +39,13 @@ aryansondharva/aryansondharva
 Add this Markdown to the `README.md` file in your profile repository:
 
 ```markdown
-![](https://aryan-sondharva.vercel.app/ghpvc/?username=aryansondharva)
+![](https://git-hub-profile-views.vercel.app/ghpvc/?username=aryansondharva)
 ```
 
 Example with options:
 
 ```markdown
-![](https://aryan-sondharva.vercel.app/ghpvc/?username=aryansondharva&color=green&style=flat-square)
+![](https://git-hub-profile-views.vercel.app/ghpvc/?username=aryansondharva&color=green&style=flat-square)
 ```
 
 ![GitHub profile README counter](public/s2.png)
@@ -73,13 +73,13 @@ You can use any valid HEX color or choose from a predefined named color. `blue` 
 **Named color**
 
 ```markdown
-![](https://aryan-sondharva.vercel.app/ghpvc/?username=your-github-username&color=green)
+![](https://git-hub-profile-views.vercel.app/ghpvc/?username=your-github-username&color=green)
 ```
 
 **Hex color**
 
 ```markdown
-![](https://aryan-sondharva.vercel.app/ghpvc/?username=your-github-username&color=dc143c)
+![](https://git-hub-profile-views.vercel.app/ghpvc/?username=your-github-username&color=dc143c)
 ```
 
 > [!NOTE]
@@ -99,7 +99,7 @@ The following styles are available. `flat` is the default.
 | `pixel` | Invisible 1x1 SVG pixel counter |
 
 ```markdown
-![](https://aryan-sondharva.vercel.app/ghpvc/?username=your-github-username&style=flat-square)
+![](https://git-hub-profile-views.vercel.app/ghpvc/?username=your-github-username&style=flat-square)
 ```
 
 ### Label
@@ -109,7 +109,7 @@ You can replace the default `Profile views` label with your own text.
 ![](https://img.shields.io/static/v1?label=PROFILE+VIEWS&message=1234567890&color=007ec6)
 
 ```markdown
-![](https://aryan-sondharva.vercel.app/ghpvc/?username=your-github-username&label=PROFILE+VIEWS)
+![](https://git-hub-profile-views.vercel.app/ghpvc/?username=your-github-username&label=PROFILE+VIEWS)
 ```
 
 > [!NOTE]
@@ -123,7 +123,7 @@ You can provide a `base` number to add to the stored counter.
 This is useful if you are migrating from another counter service and want to keep your previous count.
 
 ```markdown
-![](https://aryan-sondharva.vercel.app/ghpvc/?username=your-github-username&base=1000)
+![](https://git-hub-profile-views.vercel.app/ghpvc/?username=your-github-username&base=1000)
 ```
 
 ### Abbreviation
@@ -135,7 +135,7 @@ For example, `12345` will be displayed as `12.3K`.
 ![](https://img.shields.io/static/v1?label=Profile+views&message=12.3K&color=007ec6)
 
 ```markdown
-![](https://aryan-sondharva.vercel.app/ghpvc/?username=your-github-username&abbreviated=true)
+![](https://git-hub-profile-views.vercel.app/ghpvc/?username=your-github-username&abbreviated=true)
 ```
 
 ## Supported Parameters
