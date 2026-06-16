@@ -261,8 +261,8 @@ Any public badge counter can be manipulated if someone repeatedly requests it th
 
 `GitHub Profile Views Counter` is open-sourced software licensed under the [MIT license](LICENSE) by [Aryan Sondharva].
 
-## Stargazers Over Time
 
-[![Stargazers over time](https://starchart.cc/aryansondharva/GitHub-Profile-Views.svg)](https://starchart.cc/aryansondharva/GitHub-Profile-Views)
+## Stargazers over time
+[![Stargazers over time](https://starchart.cc/aryansondharva/GitHub-Profile-Views.svg?variant=adaptive)](https://starchart.cc/aryansondharva/GitHub-Profile-Views)
 
 [Aryan Sondharva]: https://github.com/aryansondharva
