@@ -1,0 +1,6 @@
+/.docker-volume-postgres/
+/.idea/
+/node_modules/
+.npm/
+npm-debug.log*
+.env

@@ -1,0 +1,33 @@
+name: continuous integration
+on:
+  pull_request:
+  push: { branches: master }
+jobs:
+  node_test:
+    name: Node Test
+    runs-on: ${{ matrix.operating-system }}
+    strategy:
+      matrix:
+        operating-system: ['ubuntu-latest', 'windows-latest', 'macos-latest']
+        node-version: ['20.x', '22.x']
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Setup Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Install dependencies
+      run: npm install
+    - name: Run tests
+      run: npm test
+  docker_test:
+    name: Build Docker Image Test
+    runs-on: ubuntu-latest
+    env:
+      COMPOSE_FILE: docker-compose.yaml
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Build docker images
+      run: docker-compose build

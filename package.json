@@ -1,0 +1,27 @@
+{
+  "name": "github-profile-views-counter",
+  "version": "1.0.0",
+  "description": "GitHub profile views counter built with JavaScript and Node.js.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Aryan Sondharva",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aryansondharva/GitHub-Profile-Views.git"
+  },
+  "homepage": "https://github.com/aryansondharva/GitHub-Profile-Views#readme",
+  "bugs": {
+    "url": "https://github.com/aryansondharva/GitHub-Profile-Views/issues"
+  },
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "optionalDependencies": {
+    "pg": "^8.13.1"
+  }
+}

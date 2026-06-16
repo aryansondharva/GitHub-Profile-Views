@@ -1,0 +1,51 @@
+services:
+  app:
+    container_name: ${PROJECT_NAME}-app
+    image: ghpvc-app
+    build:
+      context: ./
+      dockerfile: ./.docker/node/Dockerfile
+    restart: unless-stopped
+    working_dir: /app
+    ports:
+      - "${PORT:-3000}:3000"
+    environment:
+      PORT: 3000
+      REPOSITORY: ${REPOSITORY:-file}
+      FILE_STORAGE_PATH: ${FILE_STORAGE_PATH:-}
+      DB_HOST: ${DB_HOST:-postgres}
+      DB_PORT: ${DB_PORT:-5432}
+      DB_USER: ${DB_USER:-postgres}
+      DB_PASSWORD: ${DB_PASSWORD:-postgres}
+      DB_NAME: ${DB_NAME:-github_profile_views_counter}
+      DB_TABLE: ${DB_TABLE:-github_profile_views}
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    networks:
+      - ghpvc
+    depends_on:
+      - postgres
+
+  postgres:
+    container_name: ${PROJECT_NAME}-postgres
+    image: postgres:13.4-alpine
+    restart: unless-stopped
+    ports:
+      - "${DB_PORT:-5432}:${DB_PORT:-5432}"
+    environment:
+      POSTGRES_USER: ${DB_USER:-postgres}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-postgres}
+      POSTGRES_DB: ${DB_NAME:-github_profile_views_counter}
+    volumes:
+      - ./.docker-volume-postgres:/var/lib/postgresql/data
+    networks:
+      - ghpvc
+
+volumes:
+  .docker-volume-postgres:
+    driver: local
+
+networks:
+  ghpvc:
+    driver: bridge
